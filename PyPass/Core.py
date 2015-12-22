@@ -19,6 +19,7 @@ for password in range(1, count+1):
     current = {password: pword}
     user.append(current)
 
-with open("results.txt", "w") as res:
+with open("results.csv", "w") as res:
     for item in user:
-        res.write(str(item) + "\n")
+        for field, field2 in item.iteritems():
+            res.write(str(field) + ", " + str(field2) + "\n")
