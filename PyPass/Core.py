@@ -1,10 +1,16 @@
 import random
 import string
 import os
-
+import config
 
 user = []
-valList = list(string.ascii_letters + string.digits)
+
+if config.SEC_LEVEL == 1:
+    valList = list(string.ascii_letters + string.digits)
+elif config.SEC_LEVEL == 2:
+    valList = list(string.ascii_letters + string.digits + string.punctuation)
+else:
+    valList = list(string.printable)
 
 def generate(valList, length):
     password = []
@@ -13,8 +19,9 @@ def generate(valList, length):
     return "".join(password)
 
 While True:
-    seed = os.urandom(4)
-    random.seed(seed)
+    if config.USE_SECURE_SEED == True:
+        seed = os.urandom(config.LEN_SECURE_SEED)
+        random.seed(seed)
     length = int(raw_input("How long should the password be?: "))
     count = int(raw_input("How many users would you like to generate passwords for?: "))
     for password in range(1, count+1):
