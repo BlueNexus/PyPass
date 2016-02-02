@@ -29,7 +29,7 @@ While True:
         current = {password: pword}
         user.append(current)
 
-    with open("results.csv", "w") as res:
+    with open(str(config.OUTPUT_FILE), "w") as res:
         for item in user:
             for field, field2 in item.iteritems():
                 res.write(str(field) + ", " + str(field2) + "\n")
