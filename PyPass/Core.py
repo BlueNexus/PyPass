@@ -1,5 +1,6 @@
 import random
 import string
+import os
 
 
 user = []
@@ -11,15 +12,17 @@ def generate(valList, length):
         password.append(str(valList[random.randint(1, 61)]))
     return "".join(password)
 
+While True:
+    seed = os.urandom(4)
+    random.seed(seed)
+    length = int(raw_input("How long should the password be?: "))
+    count = int(raw_input("How many users would you like to generate passwords for?: "))
+    for password in range(1, count+1):
+        pword = generate(valList, length)
+        current = {password: pword}
+        user.append(current)
 
-length = int(raw_input("How long should the password be?: "))
-count = int(raw_input("How many users would you like to generate passwords for?: "))
-for password in range(1, count+1):
-    pword = generate(valList, length)
-    current = {password: pword}
-    user.append(current)
-
-with open("results.csv", "w") as res:
-    for item in user:
-        for field, field2 in item.iteritems():
-            res.write(str(field) + ", " + str(field2) + "\n")
+    with open("results.csv", "w") as res:
+        for item in user:
+            for field, field2 in item.iteritems():
+                res.write(str(field) + ", " + str(field2) + "\n")
