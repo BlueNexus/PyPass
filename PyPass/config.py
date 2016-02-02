@@ -2,9 +2,9 @@
 # CONFIG
 # # # # # # # # # # #
 # SEC_LEVEL: The range of possible characters which can be used in generating passwords. 
-# 1 = Only letters and digits
-# 2 = Letters, digits and punctuation
-# 3 = All printable characters
+# 1: Only letters and digits
+# 2: Letters, digits and punctuation
+# 3: All printable characters
 # 
 # USE_SECURE_SEED: Whether or not to use a cryptographically-secure seed for each session
 # True: Secure seed enabled
