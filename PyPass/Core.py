@@ -15,7 +15,7 @@ else:
 def generate(valList, length):
     password = []
     for char in range(1, length + 1):
-        password.append(str(valList[random.randint(1, 61)]))
+        password.append(str(valList[random.randint(1, len(valList))]))
     return "".join(password)
 
 While True:
