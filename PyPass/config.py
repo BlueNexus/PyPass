@@ -27,24 +27,33 @@ OUTPUT_FILE = "output.csv"
 # # # # # # # # # # # # # # # #
 
 def SEC_LEVEL():
-    if SEC_LEVEL is not None:
+    if SEC_LEVEL is not None and 0 < SEC_LEVEL > 4:
         return SEC_LEVEL
     else:
-        print "ERROR: NULL VALUE(SEC_LEVEL)"
+        if SEC_LEVEL is None:
+            print "ERROR: NULL VALUE(SEC_LEVEL)"
+        else:
+            print "ERROR: INVALID VALUE(SEC_LEVEL"
         exit()
 
 def USE_SECURE_SEED():
-    if USE_SECURE_SEED is not None:
+    if USE_SECURE_SEED is not None and USE_SECURE_SEED in (True, False):
         return USE_SECURE_SEED
     else:
-        print "ERROR: NULL VALUE(USE_SECURE_SEED)"
+        if USE_SECURE_SEED is None:
+            print "ERROR: NULL VALUE(USE_SECURE_SEED)"
+        else:
+            print "ERROR: INVALID VALUE(USE_SECURE_SEED)"
         exit()
 
 def LEN_SECURE_SEED():
-    if LEN_SECURE_SEED is not None:
+    if LEN_SECURE_SEED is not None and 0 < LEN_SECURE_SEED:
         return LEN_SECURE_SEED
     else:
-        print "ERROR: NULL VALUE(LEN_SECURE_SEED"
+        if LEN_SECURE_SEED is None:
+            print "ERROR: NULL VALUE(LEN_SECURE_SEED)"
+        else:
+            print "ERROR: INVALID VALUE(LEN_SECURE_SEED)"
         exit()
 
 def OUTPUT_FILE():
