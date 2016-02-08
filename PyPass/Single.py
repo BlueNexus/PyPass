@@ -1,6 +1,5 @@
 import random
 import string
-import os
 import config
 
 if config.SEC_LEVEL == 1:
@@ -29,7 +28,6 @@ While True:
     except:
         print "ERROR: INVALID INPUT"
         continue
-    for password in range(1, count+1):
-        pword = generate(valList, length)
-        current = {password: pword}
-        print current
+    pword = generate(valList, length)
+    current = {password: pword}
+    print current
