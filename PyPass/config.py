@@ -15,12 +15,17 @@
 #
 # OUTPUT_FILE: The file which the resulting passwords will be outputted to. Include file extension. MUST BE ENCLOSED IN "'s
 # Example: "C:/Users/Sample/passwords.csv"
+#
+# MODE: Whether the generator is in Single or Multi mode.
+# 1: Single
+# 2: Multi
 # # # # # # # # # # #
 
 SEC_LEVEL = 1
 USE_SECURE_SEED = True
 LEN_SECURE_SEED = 8
 OUTPUT_FILE = "output.csv"
+MODE = 2
 
 # # # # # # # # # # # # # # # #
 # DO NOT EDIT BELOW THIS LINE
@@ -65,4 +70,11 @@ def OUTPUT_FILE():
         return OUTPUT_FILE
     else:
         print "ERROR: NULL VALUE(OUTPUT_FILE)"
+        exit()
+
+def MODE():
+    if MODE in (1, 2):
+        return MODE
+    else:
+        print "ERROR: INVALID VALUE(MODE)"
         exit()
