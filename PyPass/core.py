@@ -15,7 +15,7 @@ elif config.SEC_LEVEL == 2:
 elif config.SEC_LEVEL == 3:
     valList = list(string.printable)
 else:
-    print "ERROR: INVALID VALUE(SEC_LEVEL)"
+    print("ERROR: INVALID VALUE(SEC_LEVEL)")
     exit()
 
 
@@ -23,23 +23,23 @@ def generate(valList, length):
     password = []
     for char in range(1, length + 1):
         password.append(str(valList[random.randint(1, len(valList))]))
-    return "".join(password)
+    return("".join(password))
 
 While True:
     if config.USE_SECURE_SEED is True:
         seed = os.urandom(config.LEN_SECURE_SEED)
         random.seed(seed)
     try:
-        length = int(raw_input("How long should the password be?: "))
+        length = int(input("How long should the password be?: "))
         if config.MODE == 2:
-            count = int(raw_input("How many users would you like to generate passwords for?: "))
+            count = int(input("How many users would you like to generate passwords for?: "))
     except:
         print "ERROR: INVALID INPUT"
         continue
     if config.MODE == 1:
         pword = generate(valList, length)
         current = {password: pword}
-        print current
+        print(current)
     else:
         for password in range(1, count+1):
             pword = generate(valList, length)
@@ -52,5 +52,5 @@ While True:
                     for field, field2 in item.iteritems():
                         res.write(str(field) + ", " + str(field2) + "\n")
         except:
-            print "ERROR: FILE ERROR"
+            print("ERROR: FILE ERROR")
             continue
