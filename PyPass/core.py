@@ -1,3 +1,6 @@
+# Password generation tool
+# Author: Ben J. C. Reeve (BlueNexus)
+
 import random
 import string
 import os
