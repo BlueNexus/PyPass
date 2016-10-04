@@ -9,11 +9,11 @@ import config
 user = []
 
 if config.SEC_LEVEL() == 1:
-    valList = list(string.ascii_letters + string.digits)
+    valList = list(string.ascii_letters)
 elif config.SEC_LEVEL() == 2:
-    valList = list(string.ascii_letters + string.digits + string.punctuation)
+    valList = list(string.ascii_letters + string.digits)
 elif config.SEC_LEVEL() == 3:
-    valList = list(string.printable)
+    valList = list(string.ascii_letters + string.digits + string.punctuation)
 else:
     print("ERROR: INVALID VALUE(SEC_LEVEL)")
     exit()
