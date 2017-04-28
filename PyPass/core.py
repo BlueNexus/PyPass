@@ -29,6 +29,7 @@ def parse_radio(rb):
         valList = list(string.ascii_letters + string.digits + string.punctuation)
 
 def file_browser(rb):
+    global output_file
     output_file = app.directoryBox(title=None, dirName=None)
 
 def show_config(rb):
@@ -57,13 +58,12 @@ def start(rb):
             pword = generate(valList, load_configuration()['password length'])
             current = {password: pword}
             user.append(current)
-
         try:
-            with open(output_file + "output.csv", "w") as res:
+            with open(output_file + "/output.csv", "w+") as res:
                 for item in user:
                     for field, field2 in item.items():
                         res.write(str(field) + ", " + str(field2) + "\n")
-                aoo.addListItem("output", "Done.")
+                app.addListItem("output", "Done.")
         except:
             app.addListItem("output", "ERROR: FILE ERROR")
             return
